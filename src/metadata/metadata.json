@@ -1,0 +1,1208 @@
+{
+  "package": "Shippo",
+  "tagline": "Shippo API",
+  "description": "Shipping",
+  "image": "http:\/\/logo.clearbit.com\/shippo.com",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-Shippo-Package",
+  "keywords": [
+  ],
+  "accounts": {
+    "domain": "shippo.com",
+    "credentials": [
+      "apiKey"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "createAddress",
+      "description": "Creates a new address object",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "Name for the address.",
+          "required": true
+        },
+        {
+          "name": "objectPurpose",
+          "type": "String",
+          "info": "Purpose of the new address. Possible valuse: QUOTE or PURCHASE.",
+          "required": true
+        },
+        {
+          "name": "company",
+          "type": "String",
+          "info": "Company at the provided address.",
+          "required": false
+        },
+        {
+          "name": "street1",
+          "type": "String",
+          "info": "Street of the address.",
+          "required": true
+        },
+        {
+          "name": "streetNo",
+          "type": "String",
+          "info": "Optional additional info about the address.",
+          "required": false
+        },
+        {
+          "name": "street2",
+          "type": "String",
+          "info": "Optional additional info about the address.",
+          "required": false
+        },
+        {
+          "name": "street3",
+          "type": "String",
+          "info": "Optional additional info about the address.",
+          "required": false
+        },
+        {
+          "name": "city",
+          "type": "String",
+          "info": "City of the address.",
+          "required": true
+        },
+        {
+          "name": "zip",
+          "type": "String",
+          "info": "Zip code of the address.",
+          "required": true
+        },
+        {
+          "name": "state",
+          "type": "String",
+          "info": "State of the address, if applied (otherwise leave empty).",
+          "required": true
+        },
+        {
+          "name": "country",
+          "type": "String",
+          "info": "ISO 3166-1-alpha-2 code (ISO 2 country code).",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "type": "String",
+          "info": "Phone of the address.",
+          "required": false
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "info": "Email of the address.",
+          "required": true
+        },
+        {
+          "name": "isResidential",
+          "type": "Boolean",
+          "info": "Describes if a person is residential.",
+          "required": false
+        },
+        {
+          "name": "validate",
+          "type": "Boolean",
+          "info": "Describes if address requires validation.",
+          "required": false
+        },
+        {
+          "name": "metadata",
+          "type": "String",
+          "info": "Metadata for the address.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAddresses",
+      "description": "Retrieves list of addresses",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleAddress",
+      "description": "Retrieves single address.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "addressId",
+          "type": "credentials",
+          "info": "Id of the address.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "validateSingleAddress",
+      "description": "Validates single address.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "addressId",
+          "type": "String",
+          "info": "Id of the address.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "createParcel",
+      "description": "Creates a new parcel object.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "parcelLength",
+          "type": "String",
+          "info": "Length of the parcel.",
+          "required": true
+        },
+        {
+          "name": "parcelWidth",
+          "type": "String",
+          "info": "Width of the parcel.",
+          "required": true
+        },
+        {
+          "name": "parcelHeight",
+          "type": "String",
+          "info": "Height of the parcel.",
+          "required": true
+        },
+        {
+          "name": "measurementUnit",
+          "type": "String",
+          "info": "Measurement units. Possible values: cm, in, ft, mm, m, yd",
+          "required": true
+        },
+        {
+          "name": "parcelWeight",
+          "type": "String",
+          "info": "Weight of the parcel.",
+          "required": true
+        },
+        {
+          "name": "weightUnit",
+          "type": "String",
+          "info": "Measurement units. Possible values: g, oz, lb, kg",
+          "required": true
+        },
+        {
+          "name": "template",
+          "type": "String",
+          "info": "Template of the parcel.",
+          "required": false
+        },
+        {
+          "name": "metadata",
+          "type": "String",
+          "info": "EMtadata of the parcel.",
+          "required": false
+        },
+        {
+          "name": "extra",
+          "type": "JSON",
+          "info": "Extra data of the parcel.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getParcels",
+      "description": "Retrieves list of parcels.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleParcel",
+      "description": "Retrieves one parcel information.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "parcelId",
+          "type": "String",
+          "info": "Id of the parcels.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "createShipment",
+      "description": "Creates a new shipment object.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "objectPurpose",
+          "type": "String",
+          "info": "Purpose of the new shipment. Possible valuse: QUOTE or PURCHASE.",
+          "required": true
+        },
+        {
+          "name": "addressToId",
+          "type": "String",
+          "info": "Address of the receiver",
+          "required": true
+        },
+        {
+          "name": "addressToId",
+          "type": "String",
+          "info": "Address of the sender",
+          "required": true
+        },
+        {
+          "name": "parcelId",
+          "type": "String",
+          "info": "parcel Id",
+          "required": true
+        },
+        {
+          "name": "addressReturnId",
+          "type": "String",
+          "info": "Address of the return",
+          "required": false
+        },
+        {
+          "name": "submissionDate",
+          "type": "String",
+          "info": "Datetime of the submission",
+          "required": false
+        },
+        {
+          "name": "customsDeclarationId",
+          "type": "String",
+          "info": "Customs declaration Id",
+          "required": false
+        },
+        {
+          "name": "insuranceAmount",
+          "type": "String",
+          "info": "Insurance amount",
+          "required": false
+        },
+        {
+          "name": "insuranceCurrency",
+          "type": "String",
+          "info": "Currency of insurance amount. ISO 4217 Currency Code",
+          "required": false
+        },
+        {
+          "name": "extra",
+          "type": "JSON",
+          "info": "Extra information about the shipment",
+          "required": false
+        },
+        {
+          "name": "reference1",
+          "type": "String",
+          "info": "Reference information",
+          "required": false
+        },
+        {
+          "name": "reference2",
+          "type": "String",
+          "info": "Additional reference information",
+          "required": false
+        },
+        {
+          "name": "metadata",
+          "type": "String",
+          "info": "Metadata of the shipment",
+          "required": false
+        },
+        {
+          "name": "async",
+          "type": "Boolean",
+          "info": "Shipment async of not",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getShipments",
+      "description": "Retrieves list of shipments.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleShipment",
+      "description": "Retrieves one shipment from the list.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "shipmentId",
+          "type": "String",
+          "info": "Id of the shipment",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getShipmentRates",
+      "description": "Retrieves list of rates for single shipment.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "shipmentId",
+          "type": "String",
+          "info": "Id of the shipment",
+          "required": true
+        },
+        {
+          "name": "currencyCode",
+          "type": "String",
+          "info": "Code of the currency",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getShipmentSingleRate",
+      "description": "Retrieves list of rates for single shipment.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "rateId",
+          "type": "String",
+          "info": "Id of the rate",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "createTransactionBasedOnRate",
+      "description": "Creates a new transaction object and purchases the shipping label for the provided rate.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "rateId",
+          "type": "String",
+          "info": "Id of the rate",
+          "required": true
+        },
+        {
+          "name": "labelFileType",
+          "type": "String",
+          "info": "Filetypes of the label. Possible values: PNG, PDF, PDF_4X6,ZPLII",
+          "required": false
+        },
+        {
+          "name": "metadata",
+          "type": "String",
+          "info": "Metadata for the transaction",
+          "required": false
+        },
+        {
+          "name": "async",
+          "type": "Boolean",
+          "info": "Sets if transaction is async",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "createTransaction",
+      "description": "Creates a new transaction object and purchases the shipping label for the provided rate.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "shipmentObjectPurpose",
+          "type": "String",
+          "info": "Purpose of the new shipment. Possible valuse: QUOTE or PURCHASE.",
+          "required": true
+        },
+        {
+          "name": "shipmentAddressToId",
+          "type": "String",
+          "info": "Address of the receiver",
+          "required": true
+        },
+        {
+          "name": "shipmentAddressFromId",
+          "type": "String",
+          "info": "Address of the sender",
+          "required": true
+        },
+        {
+          "name": "parcelId",
+          "type": "String",
+          "info": "Id of the parcel",
+          "required": true
+        },
+        {
+          "name": "serviceLevelToken",
+          "type": "String",
+          "info": "Specific rates when purchasing shipping label. Possible values are described at this page: https://goshippo.com/docs/reference#servicelevels",
+          "required": true
+        },
+        {
+          "name": "carrierAccount",
+          "type": "String",
+          "info": "Carrier accounts are used as credentials to retrieve shipping rates and purchase labels from a shipping provider.",
+          "required": true
+        },
+        {
+          "name": "labelFileType",
+          "type": "String",
+          "info": "Filetypes of the label. Possible values: PNG, PDF, PDF_4X6,ZPLII",
+          "required": false
+        },
+        {
+          "name": "metadata",
+          "type": "String",
+          "info": "Metadata for the transaction",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getTransactions",
+      "description": "Retrieves list of transactions.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleTransaction",
+      "description": "Retrieves single transaction from the list of transactions.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "transactionId",
+          "type": "String",
+          "info": "Id of the transaction",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "createCustomsItem",
+      "description": "Creates a new Customs Item object.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "itemDescription",
+          "type": "String",
+          "info": "Description of the item",
+          "required": true
+        },
+        {
+          "name": "itemQuantity",
+          "type": "Number",
+          "info": "Quantity of the item",
+          "required": true
+        },
+        {
+          "name": "itemNetWeight",
+          "type": "String",
+          "info": "Net weight of the item",
+          "required": true
+        },
+        {
+          "name": "itemWeightMeasurementUnit",
+          "type": "String",
+          "info": "Measurement units. Possible values: g, oz, lb, kg",
+          "required": true
+        },
+        {
+          "name": "itemValue",
+          "type": "String",
+          "info": "Value of the item",
+          "required": true
+        },
+        {
+          "name": "itemValueCurrency",
+          "type": "String",
+          "info": "ISO 4217 Currency Code",
+          "required": true
+        },
+        {
+          "name": "itemOriginCountry",
+          "type": "String",
+          "info": "ISO 3166-1-alpha-2 code (ISO 2 country code)",
+          "required": true
+        },
+        {
+          "name": "itemTariffNumber",
+          "type": "String",
+          "info": "Number of item tariff",
+          "required": false
+        },
+        {
+          "name": "metadata",
+          "type": "String",
+          "info": "Item metadata",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getCustomsItems",
+      "description": "Retrieves list of customs items.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleCustomsItem",
+      "description": "Retrieves single customs item from the list of customs items.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "customsItemId",
+          "type": "String",
+          "info": "Id of the customs item",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "createCustomsDeclaration",
+      "description": "Createsnew customs declaration",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "declarationCertifySigner",
+          "type": "String",
+          "info": "Certify signer",
+          "required": true
+        },
+        {
+          "name": "certify",
+          "type": "Boolean",
+          "info": "Sets certify",
+          "required": true
+        },
+        {
+          "name": "declarationItems",
+          "type": "Array",
+          "info": "Ids of items icluded in declaration",
+          "required": true
+        },
+        {
+          "name": "declarationNonDeliveryOption",
+          "type": "String",
+          "info": "Options is case of non delivery. Possible values: ABANDON OR RETURN",
+          "required": true
+        },
+        {
+          "name": "declarationContentsType",
+          "type": "String",
+          "info": "Type of items. Possible values: DOCUMENTS, GIFT, SAMPLE, MERCHANDISE, HUMANITARIAN, DONATION, RETURN, OTHER",
+          "required": true
+        },
+        {
+          "name": "declarationContentsExplanation",
+          "type": "String",
+          "info": "Explanatin of items content. Required only if declarationContentsType is OTHER",
+          "required": false
+        },
+        {
+          "name": "declarationExporterReference",
+          "type": "String",
+          "info": "Reference of the exporter.",
+          "required": false
+        },
+        {
+          "name": "declarationImporterReference",
+          "type": "String",
+          "info": "Reference of the importer.",
+          "required": false
+        },
+        {
+          "name": "declarationInvoice",
+          "type": "String",
+          "info": "Invoice for the declaration.",
+          "required": false
+        },
+        {
+          "name": "declarationLicense",
+          "type": "String",
+          "info": "License for the declaration.",
+          "required": false
+        },
+        {
+          "name": "declarationCertificate",
+          "type": "String",
+          "info": "Certificate for the declaration.",
+          "required": false
+        },
+        {
+          "name": "declarationNotes",
+          "type": "String",
+          "info": "Notes for the declaration.",
+          "required": false
+        },
+        {
+          "name": "declarationEelPfc",
+          "type": "String",
+          "info": "Possible values: 'NOEEI_30_37_a', 'NOEEI_30_37_h', 'NOEEI_30_36', 'AES_ITN'",
+          "required": false
+        },
+        {
+          "name": "declarationAesItn",
+          "type": "String",
+          "info": "required if declarationEelPfc is 'AES_ITN'",
+          "required": false
+        },
+        {
+          "name": "declarationIncoterm",
+          "type": "String",
+          "info": "Possible values: 'DDP', 'DDU', 'CPT', 'CIP'",
+          "required": false
+        },
+        {
+          "name": "declarationMetadata",
+          "type": "String",
+          "info": "Metadata of the declaration",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getCustomsDeclarations",
+      "description": "Retrieves list of customs declarations.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleCustomsDeclaration",
+      "description": "Retrieves single declaration from the list of customs declarations.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "declarationId",
+          "type": "String",
+          "info": "Id of the customs declaration.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "createRefund",
+      "description": "Creates new refund object.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "transactionId",
+          "type": "String",
+          "info": "Id of the transaction for refund.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getRefunds",
+      "description": "Retrieves list of refunds.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleRefund",
+      "description": "Retrieves single refund from the list of refunds.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "refundId",
+          "type": "String",
+          "info": "Id of the refund.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "createCarrierAccount",
+      "description": "Creates new carrier account object.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "carrierName",
+          "type": "String",
+          "info": "Name of the carrier. You can find list of carriers at this page - https://goshippo.com/docs/carriers.",
+          "required": true
+        },
+        {
+          "name": "carrierAccountId",
+          "type": "String",
+          "info": "Unique identifier of the account. You can find list of carriers at this page - https://goshippo.com/docs/carriers.",
+          "required": true
+        },
+        {
+          "name": "carrierParameters",
+          "type": "JSON",
+          "info": "Additional parameters for the account, such as e.g. password or token. You can find list of carriers at this page - https://goshippo.com/docs/carriers.",
+          "required": true
+        },
+        {
+          "name": "carrierAccountActive",
+          "type": "Boolean",
+          "info": "Determines whether the account is enabled. Default is enabled.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "updateCarrierAccount",
+      "description": "Updates existing carrier account object. carrierName and carrierAccountId can't be updated, because they form the unique identifier together.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "carrierAccountObjectId",
+          "type": "String",
+          "info": "Object account id to update.",
+          "required": true
+        },
+        {
+          "name": "carrierParameters",
+          "type": "JSON",
+          "info": "Additional parameters for the account, such as e.g. password or token. You can find list of carriers at this page - https://goshippo.com/docs/carriers.",
+          "required": false
+        },
+        {
+          "name": "carrierAccountActive",
+          "type": "Boolean",
+          "info": "Determines whether the account is enabled. Default is enabled.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getCarrierAccounts",
+      "description": "Retrieves list of carrier accounts.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleCarrierAccount",
+      "description": "Retrieves single accout object from the list of carrier accounts.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        },
+        {
+          "name": "carrierAccountObjectId",
+          "type": "String",
+          "info": "Object account id to get.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    }, {
+      "name": "getManifests",
+      "description": "Retrieves list of manifests.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    }, {
+      "name": "getSingleManifest",
+      "description": "Retrieves single manifest from the list of manifests.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }, {
+          "name": "manifestId",
+          "type": "String",
+          "info": "Id of the manifest.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    }, {
+      "name": "getTrackingStatus",
+      "description": "Retrieves status for the tracking number.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }, {
+          "name": "carrierName",
+          "type": "String",
+          "info": "Name of the carrier for the current tracking",
+          "required": true
+        }, {
+          "name": "trackingId",
+          "type": "String",
+          "info": "Id of the tracking",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    }, {
+      "name": "registerTrackingWebhook",
+      "description": "Registers your webhook for a shipment",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }, {
+          "name": "carrierName",
+          "type": "String",
+          "info": "Name of the carrier for the current tracking",
+          "required": true
+        }, {
+          "name": "trackingId",
+          "type": "String",
+          "info": "Id of the tracking",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    }
+  ]
+}
