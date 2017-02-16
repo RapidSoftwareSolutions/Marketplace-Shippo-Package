@@ -1111,6 +1111,48 @@
         }
       ]
     }, {
+      "name": "createManifest",
+      "description": "Creates new manifest object.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "The api key obtained from Shippo.",
+          "required": true
+        }, {
+          "name": "carrierAccountObjectId",
+          "type": "String",
+          "info": "Id of the carrier account for this manifest.",
+          "required": true
+        }, {
+          "name": "manifestSubmissionDate",
+          "type": "String",
+          "info": "Datetime of manifest submission.",
+          "required": true
+        }, {
+          "name": "addressFromId",
+          "type": "String",
+          "info": "Id of sender address.",
+          "required": true
+        }, {
+          "name": "transactions",
+          "type": "Array",
+          "info": "Transactions for this manifest.",
+          "required": true
+        }, {
+          "name": "async",
+          "type": "Boolean",
+          "info": "Async or not.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    }, {
       "name": "getManifests",
       "description": "Retrieves list of manifests.",
       "args": [

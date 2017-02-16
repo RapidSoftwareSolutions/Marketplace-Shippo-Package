@@ -324,6 +324,18 @@ Retrieves single manifest from the list of manifests.
 | apiKey    | credentials| The api key obtained from Shippo.
 | manifestId| String     | Id of the manifest.
 
+## Shippo.createManifest
+Creates new manifest object
+
+| Field                 | Type       | Description
+|-----------------------|------------|----------
+| apiKey                | credentials| The api key obtained from Shippo.
+| carrierAccountObjectId| String     | Id of the carrier account for this manifest
+| manifestSubmissionDate| String     | Datetime of manifest submission.
+| addressFromId         | String     | Id of sender address
+| transactions          | Array      | Transactions for this manifest
+| async                 | Boolean    | Async or not
+
 ## Shippo.getTrackingStatus
 Retrieves status for the tracking number.
 

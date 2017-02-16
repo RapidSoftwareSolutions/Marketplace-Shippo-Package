@@ -4,7 +4,7 @@ $app->post('/api/Shippo/createManifest', function ($request, $response, $args) {
 
     //checking properly formed json
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['apiKey', 'carrierAccountObjectId', 'manifestSubmissionDate', 'addressFromId']);
+    $validateRes = $checkRequest->validate($request, ['apiKey', 'carrierAccountObjectId', 'manifestSubmissionDate', 'addressFromId', 'transactions']);
     if (!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback'] == 'error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {
@@ -17,8 +17,9 @@ $app->post('/api/Shippo/createManifest', function ($request, $response, $args) {
     $body['submission_date'] = $post_data['args']['manifestSubmissionDate'];
     $body['address_from'] = $post_data['args']['addressFromId'];
     $body['transactions'] = $post_data['args']['transactions'];
-    $body['async'] = $post_data['args']['async'];
-
+    if (isset($post_data['args']['async']) && strlen($post_data['args']['async']) > 0) {
+        $body['async'] = $post_data['args']['async'];
+    };
 
     //requesting remote API
     $client = new GuzzleHttp\Client();
