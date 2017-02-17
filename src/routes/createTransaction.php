@@ -4,7 +4,7 @@ $app->post('/api/Shippo/createTransaction', function ($request, $response, $args
 
     //checking properly formed json
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['apiKey', 'shipmentObjectPurpose', 'shipmentAddressToId', 'shipmentAddressFromId', 'shipmentParcelId', 'serviceLevelToken', 'carrierAccount']);
+    $validateRes = $checkRequest->validate($request, ['apiKey', 'shipmentObjectPurpose', 'shipmentAddressToId', 'shipmentAddressFromId', 'parcelId', 'serviceLevelToken', 'carrierAccount']);
     if (!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback'] == 'error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {
@@ -18,7 +18,7 @@ $app->post('/api/Shippo/createTransaction', function ($request, $response, $args
     $body['shipment']['object_purpose'] = $post_data['args']['shipmentObjectPurpose'];
     $body['shipment']['address_to'] = $post_data['args']['shipmentAddressToId'];
     $body['shipment']['address_from'] = $post_data['args']['shipmentAddressFromId'];
-    $body['shipment']['parcel'] = $post_data['args']['shipmentParcelId'];
+    $body['shipment']['parcel'] = $post_data['args']['parcelId'];
     $body['servicelevel_token'] = $post_data['args']['serviceLevelToken'];
     $body['carrier_account'] = $post_data['args']['carrierAccount'];
 
