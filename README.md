@@ -95,7 +95,7 @@ Creates a new shipment object.
 | apiKey              | credentials| The api key obtained from Shippo.
 | objectPurpose       | String     | Purpose of the new shipment. Possible valuse: QUOTE or PURCHASE.
 | addressToId         | String     | Address of the receiver
-| addressToId         | String     | Address of the sender
+| addressFromId       | String     | Address of the sender
 | parcelId            | String     | parcel Id
 | addressReturnId     | String     | Address of the return
 | submissionDate      | String     | Datetime of the submission

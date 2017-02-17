@@ -330,7 +330,7 @@
           "required": true
         },
         {
-          "name": "addressToId",
+          "name": "addressFromId",
           "type": "String",
           "info": "Address of the sender",
           "required": true
