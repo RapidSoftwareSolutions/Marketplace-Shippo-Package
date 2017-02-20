@@ -1,10 +1,10 @@
 {
   "package": "Shippo",
   "tagline": "Shippo API",
-  "description": "Shipping",
+  "description": "Create a shipment, get rates and generate shipping labels.",
   "image": "http:\/\/logo.clearbit.com\/shippo.com",
   "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-Shippo-Package",
-  "keywords": [
+  "keywords": [ "API", "FedEx", "UPS", "USPS", "ecommerce", "packages", "packages", "shipping", "eCommerce"
   ],
   "accounts": {
     "domain": "shippo.com",
