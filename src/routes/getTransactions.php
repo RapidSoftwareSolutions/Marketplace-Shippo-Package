@@ -44,7 +44,8 @@ $app->post('/api/Shippo/getTransactions', function ($request, $response, $args) 
     } catch (\GuzzleHttp\Exception\ClientException $exception) {
         $responseBody = $exception->getResponse()->getReasonPhrase();
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = $responseBody;
+        $result['contextWrites']['to']['status_code'] = 'API_ERROR';
+        $result['contextWrites']['to']['status_msg'] = $responseBody;
 
     } catch (GuzzleHttp\Exception\ServerException $exception) {
 
