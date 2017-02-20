@@ -11,13 +11,13 @@ $app->post('/api/Shippo/getShipmentRates', function ($request, $response, $args)
         $post_data = $validateRes;
     }
     //forming request to vendor API
-    if (!isset($post_data['args']['currencyCode']) || strlen($post_data['args']['currencyCode']) == 0){
+    if (!isset($post_data['args']['currencyCode']) || strlen($post_data['args']['currencyCode']) == 0) {
         $post_data['args']['currencyCode'] = 'USD';
     };
 
-    $query_str = $settings['api_url'] . "shipments/".$post_data['args']['shipmentId'].'/rates/'.$post_data['args']['currencyCode'] ;
+    $query_str = $settings['api_url'] . "shipments/" . $post_data['args']['shipmentId'] . '/rates/' . $post_data['args']['currencyCode'];
 
-    if (isset($post_data['args']['pageNumber']) && strlen($post_data['args']['pageNumber'])>0){
+    if (isset($post_data['args']['pageNumber']) && strlen($post_data['args']['pageNumber']) > 0) {
         $body['page'] = $post_data['args']['pageNumber'];
     }
 
@@ -45,10 +45,9 @@ $app->post('/api/Shippo/getShipmentRates', function ($request, $response, $args)
         }
 
     } catch (\GuzzleHttp\Exception\ClientException $exception) {
-
-        $responseBody = $exception->getResponse()->getBody();
+        $responseBody = $exception->getResponse()->getReasonPhrase();
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = json_decode($responseBody);
+        $result['contextWrites']['to'] = $responseBody;
 
     } catch (GuzzleHttp\Exception\ServerException $exception) {
 

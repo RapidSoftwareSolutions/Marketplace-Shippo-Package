@@ -41,10 +41,9 @@ $app->post('/api/Shippo/getCustomsDeclarations', function ($request, $response, 
         }
 
     } catch (\GuzzleHttp\Exception\ClientException $exception) {
-
-        $responseBody = $exception->getResponse()->getBody();
+        $responseBody = $exception->getResponse()->getReasonPhrase();
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = json_decode($responseBody);
+        $result['contextWrites']['to'] = $responseBody;
 
     } catch (GuzzleHttp\Exception\ServerException $exception) {
 
