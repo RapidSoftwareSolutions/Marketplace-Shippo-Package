@@ -12,6 +12,9 @@ $app->post('/api/Shippo/getCarrierAccounts', function ($request, $response, $arg
     }
     //forming request to vendor API
     $query_str = $settings['api_url'] . "carrier_accounts";
+    if (isset($post_data['args']['pageNumber']) && strlen($post_data['args']['pageNumber'])>0){
+        $body['page'] = $post_data['args']['pageNumber'];
+    }
 
     //requesting remote API
     $client = new GuzzleHttp\Client();
@@ -19,7 +22,8 @@ $app->post('/api/Shippo/getCarrierAccounts', function ($request, $response, $arg
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'headers' => ['Authorization' => 'ShippoToken ' . $post_data['args']['apiKey']]
+            'headers' => ['Authorization' => 'ShippoToken ' . $post_data['args']['apiKey']],
+            'query' => $body
         ]);
 
         $responseBody = $resp->getBody()->getContents();

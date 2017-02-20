@@ -136,6 +136,11 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
+        }, {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the results page",
+          "required": false
         }
       ],
       "callbacks": [
@@ -157,7 +162,7 @@
         },
         {
           "name": "addressId",
-          "type": "credentials",
+          "type": "String",
           "info": "Id of the address.",
           "required": true
         }
@@ -274,6 +279,11 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
+        }, {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the results page",
+          "required": false
         }
       ],
       "callbacks": [
@@ -418,6 +428,11 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
+        }, {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the results page",
+          "required": false
         }
       ],
       "callbacks": [
@@ -471,6 +486,11 @@
           "name": "currencyCode",
           "type": "String",
           "info": "Code of the currency",
+          "required": false
+        }, {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the results page",
           "required": false
         }
       ],
@@ -622,6 +642,11 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
+        }, {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the results page",
+          "required": false
         }
       ],
       "callbacks": [
@@ -736,6 +761,11 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
+        }, {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the results page",
+          "required": false
         }
       ],
       "callbacks": [
@@ -892,6 +922,11 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
+        }, {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the results page",
+          "required": false
         }
       ],
       "callbacks": [
@@ -958,6 +993,11 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
+        }, {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the results page",
+          "required": false
         }
       ],
       "callbacks": [
@@ -1078,6 +1118,11 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
+        }, {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the results page",
+          "required": false
         }
       ],
       "callbacks": [
@@ -1161,6 +1206,11 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
+        }, {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the results page",
+          "required": false
         }
       ],
       "callbacks": [

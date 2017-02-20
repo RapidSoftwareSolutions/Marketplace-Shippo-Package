@@ -16,11 +16,15 @@ $app->post('/api/Shippo/getCustomsDeclarations', function ($request, $response, 
 
     //requesting remote API
     $client = new GuzzleHttp\Client();
+    if (isset($post_data['args']['pageNumber']) && strlen($post_data['args']['pageNumber'])>0){
+        $body['page'] = $post_data['args']['pageNumber'];
+    }
 
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'headers' => ['Authorization' => 'ShippoToken ' . $post_data['args']['apiKey']]
+            'headers' => ['Authorization' => 'ShippoToken ' . $post_data['args']['apiKey']],
+            'query' => $body
         ]);
 
         $responseBody = $resp->getBody()->getContents();

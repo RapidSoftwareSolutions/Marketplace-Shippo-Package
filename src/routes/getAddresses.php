@@ -12,17 +12,19 @@ $app->post('/api/Shippo/getAddresses', function ($request, $response, $args) {
     }
     //forming request to vendor API
     $query_str = $settings['api_url'] . "addresses";
-
-
-
+    if (isset($post_data['args']['pageNumber']) && strlen($post_data['args']['pageNumber'])>0){
+        $body['page'] = $post_data['args']['pageNumber'];
+    }
 
     //requesting remote API
     $client = new GuzzleHttp\Client();
 
+
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'headers' => ['Authorization' => 'ShippoToken ' . $post_data['args']['apiKey']]
+            'headers' => ['Authorization' => 'ShippoToken ' . $post_data['args']['apiKey']],
+             'query' => $body
         ]);
 
         $responseBody = $resp->getBody()->getContents();

@@ -17,6 +17,9 @@ $app->post('/api/Shippo/getShipmentRates', function ($request, $response, $args)
 
     $query_str = $settings['api_url'] . "shipments/".$post_data['args']['shipmentId'].'/rates/'.$post_data['args']['currencyCode'] ;
 
+    if (isset($post_data['args']['pageNumber']) && strlen($post_data['args']['pageNumber'])>0){
+        $body['page'] = $post_data['args']['pageNumber'];
+    }
 
     //requesting remote API
     $client = new GuzzleHttp\Client();
@@ -24,7 +27,8 @@ $app->post('/api/Shippo/getShipmentRates', function ($request, $response, $args)
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'headers' => ['Authorization' => 'ShippoToken ' . $post_data['args']['apiKey']]
+            'headers' => ['Authorization' => 'ShippoToken ' . $post_data['args']['apiKey']],
+            'query' => $body
         ]);
 
         $responseBody = $resp->getBody()->getContents();

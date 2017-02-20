@@ -36,9 +36,10 @@ Creates a new address object
 ## Shippo.getAddresses
 Retrieves list of addresses
 
-| Field | Type       | Description
-|-------|------------|----------
-| apiKey| credentials| The api key obtained from Shippo.
+| Field     | Type       | Description
+|-----------|------------|----------
+| apiKey    | credentials| The api key obtained from Shippo.
+| pageNumber| Number     | Number of the results page
 
 ## Shippo.getSingleAddress
 Retrieves single address.
@@ -75,9 +76,10 @@ Creates a new parcel object.
 ## Shippo.getParcels
 Retrieves list of parcels.
 
-| Field | Type       | Description
-|-------|------------|----------
-| apiKey| credentials| The api key obtained from Shippo.
+| Field     | Type       | Description
+|-----------|------------|----------
+| apiKey    | credentials| The api key obtained from Shippo.
+| pageNumber| Number     | Number of the results page
 
 ## Shippo.getSingleParcel
 Retrieves one parcel information.
@@ -111,9 +113,10 @@ Creates a new shipment object.
 ## Shippo.getShipments
 Retrieves list of shipments.
 
-| Field | Type       | Description
-|-------|------------|----------
-| apiKey| credentials| The api key obtained from Shippo.
+| Field     | Type       | Description
+|-----------|------------|----------
+| apiKey    | credentials| The api key obtained from Shippo.
+| pageNumber| Number     | Number of the results page
 
 ## Shippo.getSingleShipment
 Retrieves one shipment from the list.
@@ -131,6 +134,7 @@ Retrieves list of rates for single shipment.
 | apiKey      | credentials| The api key obtained from Shippo.
 | shipmentId  | String     | Id of the shipment
 | currencyCode| String     | Code of the currency
+| pageNumber  | Number     | Number of the results page
 
 ## Shippo.getShipmentSingleRate
 Retrieves list of rates for single shipment.
@@ -169,9 +173,10 @@ Creates a new transaction object and purchases the shipping label for the provid
 ## Shippo.getTransactions
 Retrieves list of transactions.
 
-| Field | Type       | Description
-|-------|------------|----------
-| apiKey| credentials| The api key obtained from Shippo.
+| Field     | Type       | Description
+|-----------|------------|----------
+| apiKey    | credentials| The api key obtained from Shippo.
+| pageNumber| Number     | Number of the results page
 
 ## Shippo.getSingleTransaction
 Retrieves single transaction from the list of transactions.
@@ -200,9 +205,10 @@ Creates a new Customs Item object.
 ## Shippo.getCustomsItems
 Retrieves list of customs items.
 
-| Field | Type       | Description
-|-------|------------|----------
-| apiKey| credentials| The api key obtained from Shippo.
+| Field     | Type       | Description
+|-----------|------------|----------
+| apiKey    | credentials| The api key obtained from Shippo.
+| pageNumber| Number     | Number of the results page
 
 ## Shippo.getSingleCustomsItem
 Retrieves single customs item from the list of customs items.
@@ -238,9 +244,10 @@ Createsnew customs declaration
 ## Shippo.getCustomsDeclarations
 Retrieves list of customs declarations.
 
-| Field | Type       | Description
-|-------|------------|----------
-| apiKey| credentials| The api key obtained from Shippo.
+| Field     | Type       | Description
+|-----------|------------|----------
+| apiKey    | credentials| The api key obtained from Shippo.
+| pageNumber| Number     | Number of the results page
 
 ## Shippo.getSingleCustomsDeclaration
 Retrieves single declaration from the list of customs declarations.
@@ -261,9 +268,10 @@ Creates new refund object.
 ## Shippo.getRefunds
 Retrieves list of refunds.
 
-| Field | Type       | Description
-|-------|------------|----------
-| apiKey| credentials| The api key obtained from Shippo.
+| Field     | Type       | Description
+|-----------|------------|----------
+| apiKey    | credentials| The api key obtained from Shippo.
+| pageNumber| Number     | Number of the results page
 
 ## Shippo.getSingleRefund
 Retrieves single refund from the list of refunds.
@@ -297,9 +305,10 @@ Updates existing carrier account object. carrierName and carrierAccountId can't 
 ## Shippo.getCarrierAccounts
 Retrieves list of carrier accounts.
 
-| Field | Type       | Description
-|-------|------------|----------
-| apiKey| credentials| The api key obtained from Shippo.
+| Field     | Type       | Description
+|-----------|------------|----------
+| apiKey    | credentials| The api key obtained from Shippo.
+| pageNumber| Number     | Number of the results page
 
 ## Shippo.getSingleCarrierAccount
 Retrieves single accout object from the list of carrier accounts.
@@ -312,9 +321,10 @@ Retrieves single accout object from the list of carrier accounts.
 ## Shippo.getManifests
 Retrieves list of manifests.
 
-| Field | Type       | Description
-|-------|------------|----------
-| apiKey| credentials| The api key obtained from Shippo.
+| Field     | Type       | Description
+|-----------|------------|----------
+| apiKey    | credentials| The api key obtained from Shippo.
+| pageNumber| Number     | Number of the results page
 
 ## Shippo.getSingleManifest
 Retrieves single manifest from the list of manifests.
