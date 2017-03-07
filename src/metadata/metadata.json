@@ -120,12 +120,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getAddresses",
@@ -143,12 +144,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getSingleAddress",
@@ -167,12 +169,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "validateSingleAddress",
@@ -191,12 +194,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "createParcel",
@@ -263,12 +267,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getParcels",
@@ -286,12 +291,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getSingleParcel",
@@ -310,12 +316,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "createShipment",
@@ -412,12 +419,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getShipments",
@@ -435,12 +443,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getSingleShipment",
@@ -459,12 +468,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getShipmentRates",
@@ -494,12 +504,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getShipmentSingleRate",
@@ -518,12 +529,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "createTransactionBasedOnRate",
@@ -560,12 +572,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "createTransaction",
@@ -626,12 +639,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getTransactions",
@@ -649,12 +663,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getSingleTransaction",
@@ -673,12 +688,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "createCustomsItem",
@@ -745,12 +761,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getCustomsItems",
@@ -768,12 +785,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getSingleCustomsItem",
@@ -792,12 +810,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "createCustomsDeclaration",
@@ -906,12 +925,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getCustomsDeclarations",
@@ -929,12 +949,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getSingleCustomsDeclaration",
@@ -953,12 +974,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "createRefund",
@@ -977,12 +999,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getRefunds",
@@ -1000,12 +1023,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getSingleRefund",
@@ -1024,12 +1048,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "createCarrierAccount",
@@ -1066,12 +1091,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "updateCarrierAccount",
@@ -1102,12 +1128,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getCarrierAccounts",
@@ -1125,12 +1152,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     },
     {
       "name": "getSingleCarrierAccount",
@@ -1149,12 +1177,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     }, {
       "name": "createManifest",
       "description": "Creates new manifest object.",
@@ -1191,12 +1220,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     }, {
       "name": "getManifests",
       "description": "Retrieves list of manifests.",
@@ -1213,12 +1243,13 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     }, {
       "name": "getSingleManifest",
       "description": "Retrieves single manifest from the list of manifests.",
@@ -1235,12 +1266,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     }, {
       "name": "getTrackingStatus",
       "description": "Retrieves status for the tracking number.",
@@ -1262,12 +1294,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     }, {
       "name": "registerTrackingWebhook",
       "description": "Registers your webhook for a shipment",
@@ -1289,12 +1322,13 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "error"
-        }
-      ]
+      "callbacks": [{
+        "name": "error",
+        "info": "Error"
+      }, {
+        "name": "success",
+        "info": "Success"
+      }]
     }
   ]
 }
