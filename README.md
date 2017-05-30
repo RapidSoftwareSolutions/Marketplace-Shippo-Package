@@ -338,7 +338,7 @@ Creates new manifest object.
 | carrierAccountObjectId| String     | Id of the carrier account for this manifest.
 | manifestSubmissionDate| String     | Datetime of manifest submission.
 | addressFromId         | String     | Id of sender address.
-| transactions          | Array      | Transactions for this manifest.
+| transactions          | List      | Transactions for this manifest.
 | async                 | Boolean    | Async or not.
 
 ## Shippo.getManifests

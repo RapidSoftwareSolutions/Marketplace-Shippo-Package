@@ -1390,9 +1390,14 @@
         },
         {
           "name": "transactions",
-          "type": "Array",
+          "type": "List",
           "info": "Transactions for this manifest.",
-          "required": true
+          "required": true,
+          "structure": {
+            "name": "transaction",
+            "type": "String",
+            "info": "Single transaction"
+          }
         },
         {
           "name": "async",
