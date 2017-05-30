@@ -4,7 +4,16 @@
   "description": "Create a shipment, get rates and generate shipping labels.",
   "image": "http:\/\/logo.clearbit.com\/shippo.com",
   "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-Shippo-Package",
-  "keywords": [ "API", "FedEx", "UPS", "USPS", "ecommerce", "packages", "packages", "shipping", "eCommerce"
+  "keywords": [
+    "API",
+    "FedEx",
+    "UPS",
+    "USPS",
+    "ecommerce",
+    "packages",
+    "packages",
+    "shipping",
+    "eCommerce"
   ],
   "accounts": {
     "domain": "shippo.com",
@@ -31,7 +40,11 @@
         },
         {
           "name": "objectPurpose",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "QUOTE",
+            "PURCHASE"
+          ],
           "info": "Purpose of the new address. Possible valuse: QUOTE or PURCHASE.",
           "required": true
         },
@@ -120,13 +133,16 @@
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getAddresses",
@@ -137,20 +153,24 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "pageNumber",
           "type": "Number",
           "info": "Number of the results page",
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getSingleAddress",
@@ -169,13 +189,16 @@
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "validateSingleAddress",
@@ -194,13 +217,16 @@
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "createParcel",
@@ -232,7 +258,15 @@
         },
         {
           "name": "measurementUnit",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "cm",
+            "in",
+            "ft",
+            "mm",
+            "m",
+            "yd"
+          ],
           "info": "Measurement units. Possible values: cm, in, ft, mm, m, yd",
           "required": true
         },
@@ -244,7 +278,13 @@
         },
         {
           "name": "weightUnit",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "g",
+            "oz",
+            "lb",
+            "kg"
+          ],
           "info": "Measurement units. Possible values: g, oz, lb, kg",
           "required": true
         },
@@ -267,13 +307,16 @@
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getParcels",
@@ -284,20 +327,24 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "pageNumber",
           "type": "Number",
           "info": "Number of the results page",
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getSingleParcel",
@@ -316,13 +363,16 @@
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "createShipment",
@@ -336,8 +386,12 @@
         },
         {
           "name": "objectPurpose",
-          "type": "String",
-          "info": "Purpose of the new shipment. Possible valuse: QUOTE or PURCHASE.",
+          "type": "Select",
+          "options": [
+            "QUOTE",
+            "PURCHASE"
+          ],
+          "info": "Purpose of the new address. Possible valuse: QUOTE or PURCHASE.",
           "required": true
         },
         {
@@ -419,13 +473,16 @@
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getShipments",
@@ -436,20 +493,24 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "pageNumber",
           "type": "Number",
           "info": "Number of the results page",
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getSingleShipment",
@@ -468,13 +529,16 @@
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getShipmentRates",
@@ -497,20 +561,24 @@
           "type": "String",
           "info": "Code of the currency",
           "required": false
-        }, {
+        },
+        {
           "name": "pageNumber",
           "type": "Number",
           "info": "Number of the results page",
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getShipmentSingleRate",
@@ -529,13 +597,16 @@
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "createTransactionBasedOnRate",
@@ -555,7 +626,13 @@
         },
         {
           "name": "labelFileType",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "PNG",
+            "PDF",
+            "PDF_4X6",
+            "ZPLII"
+          ],
           "info": "Filetypes of the label. Possible values: PNG, PDF, PDF_4X6,ZPLII",
           "required": false
         },
@@ -572,13 +649,16 @@
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "createTransaction",
@@ -592,8 +672,12 @@
         },
         {
           "name": "shipmentObjectPurpose",
-          "type": "String",
-          "info": "Purpose of the new shipment. Possible valuse: QUOTE or PURCHASE.",
+          "type": "Select",
+          "options": [
+            "QUOTE",
+            "PURCHASE"
+          ],
+          "info": "Purpose of the new address. Possible valuse: QUOTE or PURCHASE.",
           "required": true
         },
         {
@@ -628,7 +712,13 @@
         },
         {
           "name": "labelFileType",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "PNG",
+            "PDF",
+            "PDF_4X6",
+            "ZPLII"
+          ],
           "info": "Filetypes of the label. Possible values: PNG, PDF, PDF_4X6,ZPLII",
           "required": false
         },
@@ -639,13 +729,16 @@
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getTransactions",
@@ -656,20 +749,24 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "pageNumber",
           "type": "Number",
           "info": "Number of the results page",
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getSingleTransaction",
@@ -688,13 +785,16 @@
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "createCustomsItem",
@@ -726,7 +826,13 @@
         },
         {
           "name": "itemWeightMeasurementUnit",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "g",
+            "oz",
+            "lb",
+            "kg"
+          ],
           "info": "Measurement units. Possible values: g, oz, lb, kg",
           "required": true
         },
@@ -761,13 +867,16 @@
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getCustomsItems",
@@ -778,20 +887,24 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "pageNumber",
           "type": "Number",
           "info": "Number of the results page",
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getSingleCustomsItem",
@@ -810,13 +923,16 @@
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "createCustomsDeclaration",
@@ -848,13 +964,27 @@
         },
         {
           "name": "declarationNonDeliveryOption",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "ABANDON",
+            "ABANDON"
+          ],
           "info": "Options is case of non delivery. Possible values: ABANDON OR RETURN",
           "required": true
         },
         {
           "name": "declarationContentsType",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "DOCUMENTS",
+            "GIFT",
+            "SAMPLE",
+            "MERCHANDISE",
+            "HUMANITARIAN",
+            "DONATION",
+            "RETURN",
+            "OTHER"
+          ],
           "info": "Type of items. Possible values: DOCUMENTS, GIFT, SAMPLE, MERCHANDISE, HUMANITARIAN, DONATION, RETURN, OTHER",
           "required": true
         },
@@ -902,7 +1032,13 @@
         },
         {
           "name": "declarationEelPfc",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "NOEEI_30_37_a",
+            "NOEEI_30_37_h",
+            "NOEEI_30_36",
+            "AES_ITN"
+          ],
           "info": "Possible values: 'NOEEI_30_37_a', 'NOEEI_30_37_h', 'NOEEI_30_36', 'AES_ITN'",
           "required": false
         },
@@ -914,7 +1050,13 @@
         },
         {
           "name": "declarationIncoterm",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "DDP",
+            "DDU",
+            "CPT",
+            "CIP"
+          ],
           "info": "Possible values: 'DDP', 'DDU', 'CPT', 'CIP'",
           "required": false
         },
@@ -925,13 +1067,16 @@
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getCustomsDeclarations",
@@ -942,20 +1087,24 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "pageNumber",
           "type": "Number",
           "info": "Number of the results page",
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getSingleCustomsDeclaration",
@@ -974,13 +1123,16 @@
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "createRefund",
@@ -999,13 +1151,16 @@
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getRefunds",
@@ -1016,20 +1171,24 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "pageNumber",
           "type": "Number",
           "info": "Number of the results page",
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getSingleRefund",
@@ -1048,13 +1207,16 @@
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "createCarrierAccount",
@@ -1091,13 +1253,16 @@
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "updateCarrierAccount",
@@ -1128,13 +1293,16 @@
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getCarrierAccounts",
@@ -1145,20 +1313,24 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "pageNumber",
           "type": "Number",
           "info": "Number of the results page",
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     },
     {
       "name": "getSingleCarrierAccount",
@@ -1177,14 +1349,18 @@
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
-    }, {
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
       "name": "createManifest",
       "description": "Creates new manifest object.",
       "args": [
@@ -1193,41 +1369,50 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "carrierAccountObjectId",
           "type": "String",
           "info": "Id of the carrier account for this manifest.",
           "required": true
-        }, {
+        },
+        {
           "name": "manifestSubmissionDate",
           "type": "String",
           "info": "Datetime of manifest submission.",
           "required": true
-        }, {
+        },
+        {
           "name": "addressFromId",
           "type": "String",
           "info": "Id of sender address.",
           "required": true
-        }, {
+        },
+        {
           "name": "transactions",
           "type": "Array",
           "info": "Transactions for this manifest.",
           "required": true
-        }, {
+        },
+        {
           "name": "async",
           "type": "Boolean",
           "info": "Async or not.",
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
-    }, {
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
       "name": "getManifests",
       "description": "Retrieves list of manifests.",
       "args": [
@@ -1236,21 +1421,26 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "pageNumber",
           "type": "Number",
           "info": "Number of the results page",
           "required": false
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
-    }, {
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
       "name": "getSingleManifest",
       "description": "Retrieves single manifest from the list of manifests.",
       "args": [
@@ -1259,21 +1449,26 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "manifestId",
           "type": "String",
           "info": "Id of the manifest.",
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
-    }, {
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
       "name": "getTrackingStatus",
       "description": "Retrieves status for the tracking number.",
       "args": [
@@ -1282,26 +1477,32 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "carrierName",
           "type": "String",
           "info": "Name of the carrier for the current tracking",
           "required": true
-        }, {
+        },
+        {
           "name": "trackingId",
           "type": "String",
           "info": "Id of the tracking",
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
-    }, {
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
       "name": "registerTrackingWebhook",
       "description": "Registers your webhook for a shipment",
       "args": [
@@ -1310,25 +1511,30 @@
           "type": "credentials",
           "info": "The api key obtained from Shippo.",
           "required": true
-        }, {
+        },
+        {
           "name": "carrierName",
           "type": "String",
           "info": "Name of the carrier for the current tracking",
           "required": true
-        }, {
+        },
+        {
           "name": "trackingId",
           "type": "String",
           "info": "Id of the tracking",
           "required": true
         }
       ],
-      "callbacks": [{
-        "name": "error",
-        "info": "Error"
-      }, {
-        "name": "success",
-        "info": "Success"
-      }]
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     }
   ]
 }

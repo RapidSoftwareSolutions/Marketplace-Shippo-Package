@@ -1,14 +1,25 @@
-[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Shippo/functions?utm_source=RapidAPIGitHub_ShippoFunctions&utm_medium=button&utm_content=RapidAPI_GitHub) 
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Shippo/functions?utm_source=RapidAPIGitHub_ShippoFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 
 # Shippo Package
-Shipping
-* Domain: shippo.com
+Create a shipment, get rates and generate shipping labels.
+* Domain: [Shippo](http://shippo.com)
 * Credentials: apiKey
 
 ## How to get credentials: 
 0. Go to [Shippo website](http://shippo.com) 
 1. Log in or create a new account
 2. Go to [API page](https://app.goshippo.com/api/) to get your API key
+
+
+## Custom datatypes: 
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]``` 
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+ 
 
 ## Shippo.createAddress
 Creates a new address object
@@ -17,7 +28,7 @@ Creates a new address object
 |--------------|------------|----------
 | apiKey       | credentials| The api key obtained from Shippo.
 | name         | String     | Name for the address.
-| objectPurpose| String     | Purpose of the new address. Possible valuse: QUOTE or PURCHASE.
+| objectPurpose| Select     | Purpose of the new address. Possible valuse: QUOTE or PURCHASE.
 | company      | String     | Company at the provided address.
 | street1      | String     | Street of the address.
 | streetNo     | String     | Optional additional info about the address.
@@ -47,7 +58,7 @@ Retrieves single address.
 | Field    | Type       | Description
 |----------|------------|----------
 | apiKey   | credentials| The api key obtained from Shippo.
-| addressId| credentials| Id of the address.
+| addressId| String     | Id of the address.
 
 ## Shippo.validateSingleAddress
 Validates single address.
@@ -66,9 +77,9 @@ Creates a new parcel object.
 | parcelLength   | String     | Length of the parcel.
 | parcelWidth    | String     | Width of the parcel.
 | parcelHeight   | String     | Height of the parcel.
-| measurementUnit| String     | Measurement units. Possible values: cm, in, ft, mm, m, yd
+| measurementUnit| Select     | Measurement units. Possible values: cm, in, ft, mm, m, yd
 | parcelWeight   | String     | Weight of the parcel.
-| weightUnit     | String     | Measurement units. Possible values: g, oz, lb, kg
+| weightUnit     | Select     | Measurement units. Possible values: g, oz, lb, kg
 | template       | String     | Template of the parcel.
 | metadata       | String     | EMtadata of the parcel.
 | extra          | JSON       | Extra data of the parcel.
@@ -95,7 +106,7 @@ Creates a new shipment object.
 | Field               | Type       | Description
 |---------------------|------------|----------
 | apiKey              | credentials| The api key obtained from Shippo.
-| objectPurpose       | String     | Purpose of the new shipment. Possible valuse: QUOTE or PURCHASE.
+| objectPurpose       | Select     | Purpose of the new address. Possible valuse: QUOTE or PURCHASE.
 | addressToId         | String     | Address of the receiver
 | addressFromId       | String     | Address of the sender
 | parcelId            | String     | parcel Id
@@ -151,7 +162,7 @@ Creates a new transaction object and purchases the shipping label for the provid
 |--------------|------------|----------
 | apiKey       | credentials| The api key obtained from Shippo.
 | rateId       | String     | Id of the rate
-| labelFileType| String     | Filetypes of the label. Possible values: PNG, PDF, PDF_4X6,ZPLII
+| labelFileType| Select     | Filetypes of the label. Possible values: PNG, PDF, PDF_4X6,ZPLII
 | metadata     | String     | Metadata for the transaction
 | async        | Boolean    | Sets if transaction is async
 
@@ -161,13 +172,13 @@ Creates a new transaction object and purchases the shipping label for the provid
 | Field                | Type       | Description
 |----------------------|------------|----------
 | apiKey               | credentials| The api key obtained from Shippo.
-| shipmentObjectPurpose| String     | Purpose of the new shipment. Possible valuse: QUOTE or PURCHASE.
+| shipmentObjectPurpose| Select     | Purpose of the new address. Possible valuse: QUOTE or PURCHASE.
 | shipmentAddressToId  | String     | Address of the receiver
 | shipmentAddressFromId| String     | Address of the sender
 | parcelId             | String     | Id of the parcel
 | serviceLevelToken    | String     | Specific rates when purchasing shipping label. Possible values are described at this page: https://goshippo.com/docs/reference#servicelevels
 | carrierAccount       | String     | Carrier accounts are used as credentials to retrieve shipping rates and purchase labels from a shipping provider.
-| labelFileType        | String     | Filetypes of the label. Possible values: PNG, PDF, PDF_4X6,ZPLII
+| labelFileType        | Select     | Filetypes of the label. Possible values: PNG, PDF, PDF_4X6,ZPLII
 | metadata             | String     | Metadata for the transaction
 
 ## Shippo.getTransactions
@@ -195,7 +206,7 @@ Creates a new Customs Item object.
 | itemDescription          | String     | Description of the item
 | itemQuantity             | Number     | Quantity of the item
 | itemNetWeight            | String     | Net weight of the item
-| itemWeightMeasurementUnit| String     | Measurement units. Possible values: g, oz, lb, kg
+| itemWeightMeasurementUnit| Select     | Measurement units. Possible values: g, oz, lb, kg
 | itemValue                | String     | Value of the item
 | itemValueCurrency        | String     | ISO 4217 Currency Code
 | itemOriginCountry        | String     | ISO 3166-1-alpha-2 code (ISO 2 country code)
@@ -227,8 +238,8 @@ Createsnew customs declaration
 | declarationCertifySigner      | String     | Certify signer
 | certify                       | Boolean    | Sets certify
 | declarationItems              | Array      | Ids of items icluded in declaration
-| declarationNonDeliveryOption  | String     | Options is case of non delivery. Possible values: ABANDON OR RETURN
-| declarationContentsType       | String     | Type of items. Possible values: DOCUMENTS, GIFT, SAMPLE, MERCHANDISE, HUMANITARIAN, DONATION, RETURN, OTHER
+| declarationNonDeliveryOption  | Select     | Options is case of non delivery. Possible values: ABANDON OR RETURN
+| declarationContentsType       | Select     | Type of items. Possible values: DOCUMENTS, GIFT, SAMPLE, MERCHANDISE, HUMANITARIAN, DONATION, RETURN, OTHER
 | declarationContentsExplanation| String     | Explanatin of items content. Required only if declarationContentsType is OTHER
 | declarationExporterReference  | String     | Reference of the exporter.
 | declarationImporterReference  | String     | Reference of the importer.
@@ -236,9 +247,9 @@ Createsnew customs declaration
 | declarationLicense            | String     | License for the declaration.
 | declarationCertificate        | String     | Certificate for the declaration.
 | declarationNotes              | String     | Notes for the declaration.
-| declarationEelPfc             | String     | Possible values: 'NOEEI_30_37_a', 'NOEEI_30_37_h', 'NOEEI_30_36', 'AES_ITN'
+| declarationEelPfc             | Select     | Possible values: 'NOEEI_30_37_a', 'NOEEI_30_37_h', 'NOEEI_30_36', 'AES_ITN'
 | declarationAesItn             | String     | required if declarationEelPfc is 'AES_ITN'
-| declarationIncoterm           | String     | Possible values: 'DDP', 'DDU', 'CPT', 'CIP'
+| declarationIncoterm           | Select     | Possible values: 'DDP', 'DDU', 'CPT', 'CIP'
 | declarationMetadata           | String     | Metadata of the declaration
 
 ## Shippo.getCustomsDeclarations
@@ -318,6 +329,18 @@ Retrieves single accout object from the list of carrier accounts.
 | apiKey                | credentials| The api key obtained from Shippo.
 | carrierAccountObjectId| String     | Object account id to get.
 
+## Shippo.createManifest
+Creates new manifest object.
+
+| Field                 | Type       | Description
+|-----------------------|------------|----------
+| apiKey                | credentials| The api key obtained from Shippo.
+| carrierAccountObjectId| String     | Id of the carrier account for this manifest.
+| manifestSubmissionDate| String     | Datetime of manifest submission.
+| addressFromId         | String     | Id of sender address.
+| transactions          | Array      | Transactions for this manifest.
+| async                 | Boolean    | Async or not.
+
 ## Shippo.getManifests
 Retrieves list of manifests.
 
@@ -333,18 +356,6 @@ Retrieves single manifest from the list of manifests.
 |-----------|------------|----------
 | apiKey    | credentials| The api key obtained from Shippo.
 | manifestId| String     | Id of the manifest.
-
-## Shippo.createManifest
-Creates new manifest object
-
-| Field                 | Type       | Description
-|-----------------------|------------|----------
-| apiKey                | credentials| The api key obtained from Shippo.
-| carrierAccountObjectId| String     | Id of the carrier account for this manifest
-| manifestSubmissionDate| String     | Datetime of manifest submission.
-| addressFromId         | String     | Id of sender address
-| transactions          | Array      | Transactions for this manifest
-| async                 | Boolean    | Async or not
 
 ## Shippo.getTrackingStatus
 Retrieves status for the tracking number.
