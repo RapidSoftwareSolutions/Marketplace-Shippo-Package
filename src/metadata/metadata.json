@@ -958,9 +958,15 @@
         },
         {
           "name": "declarationItems",
-          "type": "Array",
+          "type": "List",
           "info": "Ids of items icluded in declaration",
-          "required": true
+          "required": true,
+          "structure": {
+            "name": "declarationItem",
+            "type": "String",
+            "info": "Single declarationItem"
+          }
+
         },
         {
           "name": "declarationNonDeliveryOption",

@@ -237,7 +237,7 @@ Createsnew customs declaration
 | apiKey                        | credentials| The api key obtained from Shippo.
 | declarationCertifySigner      | String     | Certify signer
 | certify                       | Boolean    | Sets certify
-| declarationItems              | Array      | Ids of items icluded in declaration
+| declarationItems              | List      | Ids of items icluded in declaration
 | declarationNonDeliveryOption  | Select     | Options is case of non delivery. Possible values: ABANDON OR RETURN
 | declarationContentsType       | Select     | Type of items. Possible values: DOCUMENTS, GIFT, SAMPLE, MERCHANDISE, HUMANITARIAN, DONATION, RETURN, OTHER
 | declarationContentsExplanation| String     | Explanatin of items content. Required only if declarationContentsType is OTHER
